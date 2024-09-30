@@ -35,6 +35,7 @@ IMPORTANT: *One of the following five options `MUST` be provided*
 |QRCodeIdentification|<<QRCodeIdentificationType,QRCodeIdentificationType>>|Authentication data details. The data structure differs depending on the authentication technology
 |PlugAndChargeIdentification|<<PlugAndChargeIdentificationType,PlugAndChargeIdentificationType>>|Authentication required for Plug&Charge (EMAID/EVCOID
 |RemoteIdentification|<<RemoteIdentificationType,RemoteIdentificationType>>|Authentication data details. The data structure differs depending on the authentication technology
+|SecureChargeIdentification|<<SecureChargeIdentificationType,SecureChargeIdentificationType>>|Authentication data details. The data structure differs depending on the authentication technology
 |====
 
 [NOTE]
@@ -116,6 +117,18 @@ Identification: <<IdentificationType,IdentificationType>>:Authentication data: M
 |=====
 |Name |Data Type |Description|M/O|Field Length
 |UID|<<UIDType,UIDType>>|The UID from the RFID-Card.
+
+It `SHOULD` be read from left to right using big-endian format.
+
+Hubject will automatically convert all characters from lower case to upper case |M |50
+|=====
+
+[[SecureChargeIdentificationType]]
+=== SecureChargeIdentificationType
+[%header]
+|=====
+|Name |Data Type |Description|M/O|Field Length
+|SecureChargeID|<<UIDType,UIDType>>|The ID provided to the SecureCharge SDK in the eMSP app. For the sake of convenience, we reuse UIDType as the size/semantics can be similar. The important aspect is that it is made explicit to eMSP that the identifier was provided through the SecureCharge channel.
 
 It `SHOULD` be read from left to right using big-endian format.
 
