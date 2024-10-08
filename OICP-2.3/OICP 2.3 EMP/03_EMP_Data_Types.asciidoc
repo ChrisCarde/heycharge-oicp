@@ -553,6 +553,7 @@ NFC RFID DESFire	:	Defined authentication.
 PnC	:	ISO/IEC 15118.
 REMOTE	:	App, QR-Code, Phone.
 Direct Payment	:	Remote use via direct payment. E.g. intercharge direct
+SecureCharge : Authentication via HeyCharge's SecureCharge tokens over Bluetooth.
 No Authentication Required: Not Authentication Method Required
 |=====================
 
